@@ -2,7 +2,7 @@
 Dummy [Stenographer](https://github.com/google/stenographer) scripts
 
 ## :pushpin: STENOCURL
-stenocurl is a simple wrapper around curl which:
+`stenocurl` is a simple wrapper around curl which:
    * finds where the server is based on the config
    * sets the correct flags to do client and server verification via SSL
 ### Usage
@@ -14,7 +14,7 @@ stenocurl is a simple wrapper around curl which:
   ```
 
 ## :pushpin: STENORAW
-stenoraw is a simple wrapper around stenocurl 
+`stenoraw` is a simple wrapper around stenocurl piping our raw data to your preferred PCAP tool
 ### Usage
 #### Match SDP ports from SIP
 ```
@@ -41,3 +41,6 @@ stenoraw "$PORTS after 30m ago" | tshark  -q -r /dev/stdin -o rtp.heuristic_rtp:
    192.168.65.77 31722  192.168.88.254 10000 0x7F243C54 ITU-T G.711 PCMU 13886     0 (0.0%)          140.21     33603952.15        38662.83 X
 ==============================================================
 ```
+
+## :pushpin: STENOFAKE
+`stenofake` is a dummy process to replace `stenotype` for API only executions of `stenographer`
