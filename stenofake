@@ -1,0 +1,3 @@
+#!/bin/bash
+# Prentendo stenotype, hangs forever until stopped
+tail -f /dev/null
