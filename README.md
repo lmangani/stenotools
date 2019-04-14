@@ -1,0 +1,2 @@
+# stenotools
+Dummy Stenographer scripts
