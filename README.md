@@ -1,7 +1,7 @@
 # stenotools
 Dummy [Stenographer](https://github.com/google/stenographer) scripts
 
-## STENOCURL
+## :pushpin: STENOCURL
 stenocurl is a simple wrapper around curl which:
    * finds where the server is based on the config
    * sets the correct flags to do client and server verification via SSL
@@ -13,7 +13,7 @@ stenocurl is a simple wrapper around curl which:
   1   0.000000 188.226.157.55 ? 192.168.88.254 SIP 617 Request: OPTIONS sip:inbound@192.168.88.254:5070 
   ```
 
-## STENORAW
+## :pushpin: STENORAW
 stenoraw is a simple wrapper around stenocurl 
 ### Usage
 #### Match SDP ports from SIP
