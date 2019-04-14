@@ -1,5 +1,5 @@
 # stenotools
-Dummy Stenographer scripts
+Dummy [Stenographer](https://github.com/google/stenographer) scripts
 
 ## STENOCURL
 stenocurl is a simple wrapper around curl which:
