@@ -2,17 +2,23 @@
 Dummy Stenographer scripts
 
 ## STENOCURL
+stenocurl is a simple wrapper around curl which:
+   * finds where the server is based on the config
+   * sets the correct flags to do client and server verification via SSL
+### Usage
 ```
  stenocurl /query -d "port 5060, after 1h ago" --silent | tshark -r /dev/stdin
  ```
 
 ## STENORAW
-### Match SDP ports from SIP
+stenoraw is a simple wrapper around stenocurl 
+### Usage
+#### Match SDP ports from SIP
 ```
 PORTS=$(sudo stenoraw 'port 5060, after 30m ago' | tshark -r /dev/stdin -T fields -e sip.msg_hdr | grep -i "m=audio" | awk '{print "port " $2 ", "}')
 ```
 
-#### Pipe to tshark heuristics
+##### Pipe to tshark heuristics
 ```
 stenoraw "$PORTS after 30m ago" | tshark  -q -r /dev/stdin -o rtp.heuristic_rtp:TRUE -z rtp,streams
 ```
