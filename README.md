@@ -7,8 +7,11 @@ stenocurl is a simple wrapper around curl which:
    * sets the correct flags to do client and server verification via SSL
 ### Usage
 ```
- stenocurl /query -d "port 5060, after 1h ago" --silent | tshark -r /dev/stdin
+ stenocurl /query -d "port 5060, after 1h ago" --silent --header Steno-Limit-Packets:1  | tshark -r /dev/stdin
  ```
+ ```
+  1   0.000000 188.226.157.55 ? 192.168.88.254 SIP 617 Request: OPTIONS sip:inbound@192.168.88.254:5070 
+  ```
 
 ## STENORAW
 stenoraw is a simple wrapper around stenocurl 
