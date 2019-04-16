@@ -20,8 +20,13 @@ Dummy [Stenographer](https://github.com/google/stenographer) scripts
 ```
 PORTS=$(sudo stenoraw 'port 5060, after 30m ago' | tshark -r /dev/stdin -T fields -e sip.msg_hdr | grep -i "m=audio" | awk '{print "port " $2 ", "}')
 ```
+#### Pipe to Cloudshark or Similar
+```
+stenoraw "$PORTS after 30m ago" | curl -X PUT \
+    --upload-file - http://cloudshark/api/v1/[token]/upload\?filename=foo.pcap
+```
 
-##### Pipe to tshark heuristics
+##### Pipe to Tshark for analysis and heuristics
 ```
 stenoraw "$PORTS after 30m ago" | tshark  -q -r /dev/stdin -o rtp.heuristic_rtp:TRUE -z rtp,streams
 ```
